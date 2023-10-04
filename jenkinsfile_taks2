@@ -1,0 +1,39 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Replace with actual build steps for your app, e.g., 'sh "mvn clean install"'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Replace with test steps, e.g., 'sh "mvn test"'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Mock deployment step
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'This will always run'
+        }
+        success {
+            echo 'If successful, you see this message!'
+        }
+        failure {
+            echo 'If failed, you see this message!'
+        }
+    }
+}
+
